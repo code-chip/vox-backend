@@ -1,114 +1,52 @@
-# Stack Laravel
-Stack docker for with skeleton application for the Laravel framework.
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="https://api-platform.com/logo-250x250.png" alt="API Platform"></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+API Platform is a next-generation web framework designed to easily create API-first projects without
+compromising extensibility and flexibility:
 
-## About Laravel
+* Design your own data model as plain old PHP classes or [**import an existing one**](https://api-platform.com/docs/schema-generator/) from the [Schema.org](https://schema.org/) vocabulary
+* **Expose in minutes a hypermedia REST API** with pagination, data validation, access control, relation embedding, filters and error handling...
+* Benefit from Content Negotiation: [JSON-LD](http://json-ld.org), [Hydra](http://hydra-cg.com), [HAL](http://stateless.co/hal_specification.html), [YAML](http://yaml.org/), [JSON](http://www.json.org/), [XML](https://www.w3.org/XML/) and [CSV](https://www.ietf.org/rfc/rfc4180.txt) are supported out of the box
+* Enjoy the **beautiful automatically generated API documentation** (Swagger/OpenAPI)
+* Add [**a convenient Material Design administration interface**](https://github.com/api-platform/admin) built with [React](https://facebook.github.io/react/) without writing a line of code
+* **Scaffold a fully functional Single-Page-Application** built with [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), [React Router](https://reacttraining.com/react-router/) and [Bootstrap](https://getbootstrap.com/) thanks to [the client generator](https://api-platform.com/docs/client-generator/)
+* Install a development environment and deploy your project in production using **[Docker](https://docker.com)**
+* Easily add **[JSON Web Token](https://jwt.io/) or [OAuth](https://oauth.net/) authentication**
+* Create specs and tests with a **developer friendly API testing tool** on top
+  of [Behat](http://behat.org/)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[![Build Status](https://travis-ci.org/api-platform/core.svg?branch=master)](https://travis-ci.org/api-platform/core)
+[![Build status](https://ci.appveyor.com/api/projects/status/grwuyprts3wdqx5l?svg=true)](https://ci.appveyor.com/project/dunglas/dunglasapibundle)
+[![Coverage Status](https://coveralls.io/repos/github/api-platform/core/badge.svg)](https://coveralls.io/github/api-platform/core)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93/mini.png)](https://insight.sensiolabs.com/projects/92d78899-946c-4282-89a3-ac92344f9a93)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/api-platform/core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/api-platform/core/?branch=master)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The official project documentation is available **[on the API Platform website](https://api-platform.com)**.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+API Platform embraces open web standards (Swagger, JSON-LD, Hydra, HAL, JWT, OAuth,
+HTTP...) and the [Linked Data](https://www.w3.org/standards/semanticweb/data) movement. Your API will automatically
+expose structured data in Schema.org/JSON-LD. It means that your API Platform application
+is usable **out of the box** with technologies of the semantic
+web.
 
-## Services
-PHP 8.3  
-MySQL 8.0  
-NGINX  
-Composer 2  
+It also means that **your SEO will be improved** because **[Google leverages these
+formats](https://developers.google.com/structured-data/)**.
 
-## Requirements
+Last but not least, API Platform is built on top of the [Symfony](https://symfony.com) framework.
+It means than you can:
 
-- **Docker** 20.10.12+
-- **Docker Compose** 1.25+
-- **GIT** 2.25.1+
+* use **thousands of Symfony bundles** with API Platform
+* integrate API Platform in **any existing Symfony application**
+* reuse **all your Symfony skills** and benefit of the incredible
+  amount of Symfony documentation
+* enjoy the popular [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html) (used by default, but fully optional: you can
+  use the data provider you want, including but not limited to MongoDB ODM and ElasticSearch)
 
-## How to Use
-1- Download the shellscript run command `git clone git@github.com:code-chip/stack-laravel.git new_projec`  
-2- Access the fold with `cd new_projec`  
-3- Change the remote repository to the new one `git remote set-url origin git@github.com:your_user_github/new_project.git`.  
-4- Add the new repository to push updates `git remote set-url origin git@github.com:code-chip/repo_name.git`.  
-5- Maintain the stack repository to receive updates `git remote add origin git@github.com:code-chip/stack-laravel.git`. Verify the change by running the `git remote --v` command.  
-```bash
-Before:
-origin git@github.com:code-chip/stack-laravel.git (fetch)
-origin git@github.com:code-chip/stack-laravel.git (push)
+Install
+-------
 
-After:
-origin git@github.com:your_user_github/new_project.git (fetch)
-origin git@github.com:your_user_github/new_project.git (push)
-stack git@github.com:code-chip/stack-laravel.git (fetch)
-stack git@github.com:code-chip/stack-laravel.git (push)
-```
-6- Fill in the values ​​of the environment variables in the .docker/.env file. It is important to fill in the correct values ​​of MY_UID and GID, to confirm your user id in Linux run the id command, the terminal should display something close to this:  
-```bash
-uid=1000(will) gid=1000(will) grupos=1000(will),4(adm),24(cdrom),27(sudo),30(dip),33(www-data),46(plugdev),100(users),105(lpadmin),125(sambashare),127(docker)
-```
-7- Run the command `bin/dev build` or `docker-compose build`.  
-8- Start services `bin/dev up` or `docker-compose up -d`.
+[Read the official "Getting Started" guide](https://api-platform.com/docs/core/getting-started).
 
-## Available development commands
-* `bin/dev build` will force (re)building the docker-compose stack.
-* `bin/dev rebuild` will update the base docker images, build the docker-compose stack, stop the running containers and restart with the freshly built images.
-* `bin/dev up`/`bin/dev start` or `bin/dev up <service>` will start the docker-compose stack.
-* `bin/dev status` will print the current status of the docker-compose stack.
-* `bin/dev restart` will restart the docker-compose stack.
-* `bin/dev logs <service>` will print the logs for the given container.
-* `bin/dev console <service>` will start a bash console inside the `app(laravel), nginx, mysql or composer` container.
-* `bin/dev stop` or `bin/dev stop <service>` will stop all running docker-compose stack containers or specify just one.
-* `bin/dev down` or `bin/dev down <service>` will stop and remove all docker-compose stack containers or specify just one.
-* `bin/dev exec --args` will start a bash console inside the `app(laravel), nginx, mysql or composer` container.
+Credits
+-------
 
-## Access broswer
-Laravel application [http:localhost:8000](http:localhost:8000)  
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Created by [Kévin Dunglas](https://dunglas.fr). Commercial support available at [Les-Tilleuls.coop](https://les-tilleuls.coop).
