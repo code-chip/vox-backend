@@ -4,7 +4,7 @@ FROM php:8.3-fpm
 
 # Instala dependências básicas
 RUN apt-get update && apt-get install -y \
-    unzip zip curl git libzip-dev \
+    unzip zip curl git libzip-dev libpq-dev \
     && docker-php-ext-install zip pdo_pgsql pgsql
 # or for mysql     && docker-php-ext-install zip pdo pdo_mysql
 
@@ -25,6 +25,8 @@ RUN echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.client_port=9003" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.discover_client_host=0" >> /usr/local/etc/php/conf.d/xdebug.ini    
 
+# Instala Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 # Cria o mesmo usuário e grupo do host (garante permissões corretas)
 ARG UID=1000
