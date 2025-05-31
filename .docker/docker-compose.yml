@@ -23,14 +23,15 @@ services:
       - -c
       - |
         if [ ! -f bin/console ]; then
-          composer create-project --no-interaction api-platform/api-platform:^3.2 symfony-temp
+          composer create-project symfony/skeleton symfony-temp
           cp -r symfony-temp/* ./ && \
           cp -r symfony-temp/.* ./ 2>/dev/null || true && \
           composer config name ${COMPOSER_PROJECT_NAME} && \
           composer config type ${COMPOSER_TYPE} && \
+          composer require api symfony/orm-pack symfony/maker-bundle && \
           rm -rf symfony-temp
-          apache2-foreground
-        fi      
+        fi
+        php-fpm      
   nginx:
     image: nginx:latest
     container_name: ${PROJECT_NAME}_nginx
