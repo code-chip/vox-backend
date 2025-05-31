@@ -23,9 +23,12 @@ services:
       - -c
       - |
         if [ ! -f bin/console ]; then
-          composer create-project --no-interaction api-platform/api-platform
+          composer create-project --no-interaction api-platform/api-platform:^3.2 symfony-temp
+          cp -r symfony-temp/* ./ && \
+          cp -r symfony-temp/.* ./ 2>/dev/null || true && \
           composer config name ${COMPOSER_PROJECT_NAME} && \
           composer config type ${COMPOSER_TYPE} && \
+          rm -rf symfony-temp
           apache2-foreground
         fi      
   nginx:

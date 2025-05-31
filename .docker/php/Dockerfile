@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 # Instala dependências e Xdebug
 RUN apt-get install -y unzip \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && pecl install xdebug
 
 # Habilita exibição de erros (opcional)
 RUN echo "display_errors=On" >> /usr/local/etc/php/conf.d/docker-php.ini \
