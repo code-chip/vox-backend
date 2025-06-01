@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @copyright  Copyright (c) 2025 Code Chip (https://github.com/code-chip)
+ * @copyright  Copyright (c) 2025 Code Chip (https://codechip.com.br)
  * @author     Will <willvix@outlook.com>
- * @Link       https://codechip.com.br
+ * @Link       https://github.com/code-chip
  */
 
 declare(strict_types=1);
