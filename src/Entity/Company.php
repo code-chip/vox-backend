@@ -42,6 +42,16 @@ class Company
     private ?string $tradeName = null;
 
     #[ORM\Column(length: 14)]
+    #[Assert\Regex(
+        pattern: '/^\d+$/',
+        message: "The CNPJ must not contain '.', '/', '-' or string."
+    )]
+    #[Assert\Length(
+        min: 14,
+        max: 14,
+        minMessage: 'The cnpj must contain {{ limit }} digits',
+        maxMessage: 'The cnpj must contain {{ limit }} digits',
+    )]
     #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $cnpj = null;
 
