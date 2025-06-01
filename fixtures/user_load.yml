@@ -1,0 +1,7 @@
+App\Entity\User:
+  user_1:
+    email: 'contact@voxtechnoloy.com'
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm'
+  user_2:
+    email: 'will@codechip.com.br'
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF  
