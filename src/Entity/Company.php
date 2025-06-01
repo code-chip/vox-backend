@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @copyright  Copyright (c) 2025 Code Chip (https://github.com/code-chip)
+ * @author     Will <willvix@outlook.com>
+ * @Link       https://codechip.com.br
+ */
+
 declare(strict_types=1);
 
 namespace App\Entity;
@@ -42,7 +48,7 @@ class Company
     )]
     private ?string $email = null;
 
-    #[ORM\Column(length: 8)]
+    #[ORM\Column(length: 9)]
     private ?string $registrationStatus = null;
 
     #[ORM\Column]

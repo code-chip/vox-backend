@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @copyright  Copyright (c) 2025 Code Chip (https://github.com/code-chip)
+ * @author     Will <willvix@outlook.com>
+ * @Link       https://codechip.com.br
+ */
+
 declare(strict_types=1);
 
 namespace App\Entity;
@@ -21,7 +27,7 @@ class Partner
     #[ORM\Column(length: 255)]
     private ?string $partnerName = null;
 
-    #[ORM\Column(length: 10)]
+    #[ORM\Column(length: 12)]
     private ?string $partnerType = null;
 
     #[ORM\Column(length: 13)]
