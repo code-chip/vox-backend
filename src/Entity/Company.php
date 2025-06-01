@@ -13,6 +13,8 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use App\Repository\CompanyRepository;
 use DateTimeImmutable;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -59,6 +61,17 @@ class Company
 
     #[ORM\Column]
     private ?DateTimeImmutable $updatedAt = null;
+
+    /**
+     * @var Collection<int, Partner>
+     */
+    #[ORM\OneToMany(targetEntity: Partner::class, mappedBy: 'company', orphanRemoval: true)]
+    private Collection $partners;
+
+    public function __construct()
+    {
+        $this->partners = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -181,6 +194,36 @@ class Company
     public function setUpdatedAt(DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Partner>
+     */
+    public function getpartners(): Collection
+    {
+        return $this->partners;
+    }
+
+    public function addPartner(Partner $partner): static
+    {
+        if (!$this->partners->contains($partner)) {
+            $this->partners->add($partner);
+            $partner->setCompany($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartner(Partner $partner): static
+    {
+        if ($this->partners->removeElement($partner)) {
+            // set the owning side to null (unless already changed)
+            if ($partner->getCompany() === $this) {
+                $partner->setCompany(null);
+            }
+        }
 
         return $this;
     }
