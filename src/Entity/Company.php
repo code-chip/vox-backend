@@ -17,55 +17,71 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: CompanyRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    denormalizationContext: ['groups' => ['company:write']],
+    normalizationContext: ['groups' => ['company:read']]
+)]
 class Company
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotNull(message: 'The corporate name field cannot be null')]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $corporateName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $tradeName = null;
 
     #[ORM\Column(length: 14)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $cnpj = null;
 
     #[ORM\Column(length: 12)]
     #[Assert\NotNull(message: 'The company field cannot be null')]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $companyType = null;
 
     #[ORM\Column(length: 20, nullable: true)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $phone = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Assert\Email(
         message: 'The email {{ value }} is not a valid email.',
     )]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $email = null;
 
     #[ORM\Column(length: 9)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $registrationStatus = null;
 
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?DateTimeImmutable $openingDate = null;
 
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?DateTimeImmutable $updatedAt = null;
 
     /**
      * @var Collection<int, Partner>
      */
     #[ORM\OneToMany(targetEntity: Partner::class, mappedBy: 'company', orphanRemoval: true)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private Collection $partners;
 
     public function __construct()

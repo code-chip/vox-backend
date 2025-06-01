@@ -14,6 +14,7 @@ use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PartnerRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PartnerRepository::class)]
 #[ApiResource]
@@ -22,25 +23,32 @@ class Partner
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $partnerName = null;
 
     #[ORM\Column(length: 12)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $partnerType = null;
 
     #[ORM\Column(length: 13)]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?string $qualification = null;
 
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
+    #[Groups(groups: ['company:read', 'company:write'])]
     private ?DateTimeImmutable $updatedAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'Partners')]
     #[ORM\JoinColumn(nullable: false)]
+    //#[Groups(groups: ['company:read', 'company:write'])]
     private ?Company $company = null;
 
     public function getId(): ?int
