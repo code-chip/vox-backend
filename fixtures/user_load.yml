@@ -2,6 +2,20 @@ App\Entity\User:
   user_1:
     email: 'contact@voxtechnoloy.com'
     password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm'
+    roles: ['ROLE_MANAGER']
   user_2:
     email: 'will@codechip.com.br'
-    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF  
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF
+    roles: ['ROLE_MANAGER']
+  user_3:
+    email: 'user@vox.com'
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF
+    roles: ['ROLE_USER']
+  user_4:
+    email: 'admin@vox.com'
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF
+    roles: ['ROLE_ADMIN']
+  user_5:
+    email: 'manager@vox.com'
+    password: '\$2y\$13\$z58/rps2/7aZExzwgezKc.bOW0cKgd0aWcLnE9/JqVZ5.XzuVNmcm' # 1234567890ABCDEF
+    roles: ['ROLE_MANAGER']    
