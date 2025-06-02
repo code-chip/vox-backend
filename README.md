@@ -1,4 +1,7 @@
 # Vox Backend
+<div align="center">
+<h3><a href="https://gitlab.com/voxtecnologia/quadro-societario" target="_blank">Challenge - Corporate Structure</a></h3>
+</div>
 
 ## 🧭 Overview
 
@@ -60,7 +63,11 @@ until [ -f vendor/autoload.php ]; do
   echo "⏳ Waiting for autoload to be generated..."
   sleep 2
 done && \
-echo "✅ Backend ready, executing PHP commands..." && \
+echo "✅ Backend ready, executing commands..." && \
+bin/dev console -T php sh -c "mkdir -p config/jwt && \
+openssl genrsa -out config/jwt/private.pem 4096 && \
+openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem && \
+chmod 600 config/jwt/private.pem"
 bin/dev console -T php sh -c "bin/console doctrine:migrations:migrate && bin/console hautelook:fixtures:load"
 ```
 
@@ -72,8 +79,19 @@ bin/dev console -T php sh -c "bin/console doctrine:migrations:migrate && bin/con
 uid=1000(will) gid=1000(will) grupos=1000(will),4(adm),24(cdrom),27(sudo),30(dip),33(www-data),46(plugdev),100(users),105(lpadmin),125(sambashare),127(docker)
 ```
 4- Run the command `bin/dev build` or `docker-compose build`.  
-5- Start services `bin/dev up` or `docker-compose up -d`.
-6- Run database migrations and fixtures, Access the php container bash:
+5- Start services `bin/dev up` or `docker-compose up -d`.  
+6- Generate JWT private and public key:
+```bash
+bin/dev console php
+mkdir -p config/jwt
+openssl genrsa -out config/jwt/private.pem 4096
+openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
+```
+Inside the container, give the appropriate permissions to the files::  
+```bash
+chmod 600 config/jwt/private.pem
+```
+7- Run database migrations and fixtures, Access the php container bash:
 ```bash
 bin/dev console php
 bin/console doctrine:migrations:migrate
@@ -194,6 +212,7 @@ and supported by [Symfony contributors][19].
 [28]: https://symfony.com/sponsor
 [29]: https://sulu.io
 [30]: https://getrector.com
+[31]: https://gitlab.com/voxtecnologia/quadro-societario
 
 ## 🚀 API Platform
 
