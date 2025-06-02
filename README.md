@@ -67,7 +67,7 @@ echo "✅ Backend ready, executing commands..." && \
 bin/dev console -T php sh -c "mkdir -p config/jwt && \
 openssl genrsa -out config/jwt/private.pem 4096 && \
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem && \
-chmod 600 config/jwt/private.pem"
+chmod 600 config/jwt/private.pem" && \
 bin/dev console -T php sh -c "bin/console doctrine:migrations:migrate && bin/console hautelook:fixtures:load"
 ```
 
