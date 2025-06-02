@@ -118,8 +118,8 @@ Acesse a documentação da API em:
 [http://localhost:8000/api/docs](http://localhost:8000/api/docs)  
 ReDoc:  
 [http://localhost:8000/api/docs?ui=re_doc](http://localhost:8000/api/docs?ui=re_doc)  
-Collection Insomnia:  
-📥 [Right click here and choose "Save As...", save with .json](https://raw.githubusercontent.com/code-chip/vox-backend/refs/heads/main/downloads/Insomnia_Collection_Vox_Backend_2025-06-02.json?token=GHSAT0AAAAAADDVWR2RL5ZPVKT7IDMKINYK2B547QQ)
+Collection Insomnia(Note: Functional if repository is public):  
+📥 [Right click here and choose "Save As...", save with .json](https://raw.githubusercontent.com/code-chip/vox-backend/main/downloads/Insomnia_Collection_Vox_Backend_2025-06-02.json)
 
 ## 🐳 Access information for Docker
 
