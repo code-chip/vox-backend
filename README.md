@@ -9,28 +9,6 @@ The project is a Backend application with:
 - Database: PostreSQL 15 with tables for company, partner and user.
 - Docker: Containers for Symfony, NGINX and database with networking for inter-container communication.
 
-## 📚 Table of Contents
-
-- [Vox Backend](#vox-backend)
-- [Overview](#overview)
-- [Services](#services)
-- [Requirements](#requirements)
-- [Installation and execution with a single command](#installation-and-execution-with-a-single-command)
-- [How to Use](#how-to-use)
-- [Available development commands](#available-development-commands)
-- [Access broswer](#access-broswer)
-- [📘 API Documentation](#-api-documentation)
-- [Docker Information](#docker-information)
-- [Sponsor](#sponsor)
-- [Documentation](#documentation)
-- [Community](#community)
-- [Contributing](#contributing)
-- [Security Issues](#security-issues)
-- [About Us](#about-us)
-- [API Platform](#api-platform)
-- [Getting Started API Platform](#getting-started-api-platform)
-- [Credits](#credits)
-
 <p align="center"><a href="https://symfony.com" target="_blank">
     <img src="https://symfony.com/logos/symfony_dynamic_01.svg" alt="Symfony Logo">
 </a></p>
@@ -38,6 +16,26 @@ The project is a Backend application with:
 [Symfony][1] is a **PHP framework** for web and console applications and a set
 of reusable **PHP components**. Symfony is used by thousands of web
 applications and most of the [popular PHP projects][2].
+
+## 📚 Table of Contents
+
+- [Services](#services)
+- [Requirements](#requirements)
+- [Installation and execution with a single command](#installation-and-execution-with-a-single-command)
+- [How to Use](#how-to-use)
+- [Available development commands](#available-development-commands)
+- [Access broswer](#access-broswer)
+- [📘 API Documentation Project](#-api-documentation-project)
+- [Docker Information](#docker-information)
+- [Sponsor Symfony](#sponsor-symfony)
+- [Documentation Symfony](#documentation-symfony)
+- [Community Symfony](#community-symfony)
+- [Contributing Symfony](#contributing-symfony)
+- [Security Issues Symfony](#security-issues-symfony)
+- [About Us Symfony](#about-us-symfony)
+- [API Platform](#api-platform)
+- [Getting Started API Platform](#getting-started-api-platform)
+- [Credits API Platform](#credits-api-platform)
 
 ## Services
 PHP 8.3  
@@ -97,15 +95,17 @@ bin/console hautelook:fixtures:load
 ## Access broswer
 Symfony application [http:localhost:8000](http:localhost:8000)  
 
-## 📘 API Documentation
+## 📘 API Documentation Project
 Acesse a documentação da API em:  
-[http://localhost:8000/api/docs](http://localhost:8000/api/docs)
-ReDoc:
+[http://localhost:8000/api/docs](http://localhost:8000/api/docs)  
+ReDoc:  
 [http://localhost:8000/api/docs?ui=re_doc](http://localhost:8000/api/docs?ui=re_doc)  
 
 ## Docker Information
 | Acess for:                                                  |
+|--------------|----------------------------------------------|
 | bin/dev      | docker-compose -f .docker/docker-compose.yml |
+|--------------|----------------------------------------------|
 | Service Name | Container Name                               |
 |--------------|----------------------------------------------|
 | `php`        | vox_backend                                  |
@@ -113,7 +113,7 @@ ReDoc:
 | `postgres`   | vox_database                                 |
 
 
-Sponsor
+Sponsor Symfony
 -------
 
 Symfony 7.3 is [backed][27] by
@@ -133,7 +133,7 @@ so you can focus on the features.
 
 Help Symfony by [sponsoring][28] its development!
 
-Documentation
+Documentation Symfony
 -------------
 
 * Read the [Getting Started guide][7] if you are new to Symfony.
@@ -142,7 +142,7 @@ Documentation
 * Master Symfony with the [Guides and Tutorials][8], the [Components docs][9]
   and the [Best Practices][10] reference.
 
-Community
+Community Symfony
 ---------
 
 * [Join the Symfony Community][11] and meet other members at the [Symfony events][12].
@@ -150,19 +150,19 @@ Community
 * Follow us on [GitHub][14], [Twitter][15] and [Facebook][16].
 * Read our [Code of Conduct][24] and meet the [CARE Team][25].
 
-Contributing
+Contributing Symfony
 ------------
 
 Symfony is an Open Source, community-driven project with thousands of
 [contributors][19]. Join them [contributing code][17] or [contributing documentation][18].
 
-Security Issues
+Security Issues Symfony
 ---------------
 
 If you discover a security vulnerability within Symfony, please follow our
 [disclosure procedure][20].
 
-About Us
+About Us Symfony
 --------
 
 Symfony development is led by the [Symfony Core Team][22]
@@ -199,7 +199,7 @@ and supported by [Symfony contributors][19].
 [30]: https://getrector.com
 
 
-<p align="center"><img src="https://camo.githubusercontent.com/1dda7b42ea0e6ac854a4879763d1cd36c10d37168abbf268b2425b67f68c4520/68747470733a2f2f6170692d706c6174666f726d2e636f6d2f696d616765732f6c6f676f732f4c6f676f5f436972636c65253230776562627925323074657874253230626c75652e706e67" alt="API Platform"></p>
+<p align="center"><img src="https://camo.githubusercontent.com/1dda7b42ea0e6ac854a4879763d1cd36c10d37168abbf268b2425b67f68c4520/68747470733a2f2f6170692d706c6174666f726d2e636f6d2f696d616765732f6c6f676f732f4c6f676f5f436972636c65253230776562627925323074657874253230626c75652e706e67" width="250" height="250" alt="API Platform"></p>
 
 API Platform is a next-generation web framework designed to easily create API-first projects without
 compromising extensibility and flexibility:
@@ -247,7 +247,7 @@ Getting Started API Platform
 
 [Read the official "Getting Started" guide](https://api-platform.com/docs/core/getting-started).
 
-Credits
+Credits API Platform
 -------
 
 Created by [Kévin Dunglas](https://dunglas.fr). Commercial support available at [Les-Tilleuls.coop](https://les-tilleuls.coop).
