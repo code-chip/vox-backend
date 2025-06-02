@@ -1,6 +1,6 @@
 # Vox Backend
 <div align="center">
-<h3><a href="https://gitlab.com/voxtecnologia/quadro-societario" target="_blank">Challenge - Corporate Structure</a></h3>
+<h3><a href="https://gitlab.com/voxtecnologia/quadro-societario">Challenge - Corporate Structure</a></h3>
 </div>
 
 ## 🧭 Overview
