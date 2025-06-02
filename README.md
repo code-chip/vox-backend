@@ -1,6 +1,6 @@
 # Vox Backend
 
-## Overview
+## 🧭 Overview
 
 This project was developed and tested only in the Linux environment.   
 The project is a Backend application with:
@@ -19,36 +19,36 @@ applications and most of the [popular PHP projects][2].
 
 ## 📚 Table of Contents
 
-- [Services](#services)
-- [Requirements](#requirements)
-- [Installation and execution with a single command](#installation-and-execution-with-a-single-command)
-- [How to Use](#how-to-use)
-- [Available development commands](#available-development-commands)
-- [Access broswer](#access-broswer)
-- [📘 API Documentation Project](#-api-documentation-project)
-- [Docker Information](#docker-information)
-- [Sponsor Symfony](#sponsor-symfony)
-- [Documentation Symfony](#documentation-symfony)
-- [Community Symfony](#community-symfony)
-- [Contributing Symfony](#contributing-symfony)
-- [Security Issues Symfony](#security-issues-symfony)
-- [About Us Symfony](#about-us-symfony)
-- [API Platform](#api-platform)
-- [Getting Started API Platform](#getting-started-api-platform)
-- [Credits API Platform](#credits-api-platform)
+- ⚙️ [Services](#services)
+- ✅ [Requirements](#requirements)
+- 🧰 [Installation and execution with a single command](#installation-and-execution-with-a-single-command)
+- 📝 [How to Use](#how-to-use)
+- 💻 [Available development commands](#available-development-commands)
+- 🌐 [Access broswer](#access-broswer)
+- 📘 [API Documentation Project](#-api-documentation-project)
+- 🐳 [Access information for Docker](#access-information-for-docker)
+- 🤝 [Sponsor Symfony](#sponsor-symfony)
+- 📖 [Documentation Symfony](#documentation-symfony)
+- 🌍 [Community Symfony](#community-symfony)
+- 🧑‍💻 [Contributing Symfony](#contributing-symfony)
+- 🔐 [Security Issues Symfony](#security-issues-symfony)
+- 👥 [About Us Symfony](#about-us-symfony)
+- 🚀 [API Platform](#api-platform)
+- 🛠️ [Getting Started API Platform](#getting-started-api-platform)
+- 🏅 [Credits API Platform](#credits-api-platform)
 
-## Services
+## ⚙️ Services
 PHP 8.3  
 PostgreSQL 15  
 NGINX    
 
-## Requirements
+## ✅ Requirements
 
 - **Docker** 20.10.12+
 - **Docker Compose** 1.25+
 - **GIT** 2.25.1+
 
-## Installation and execution with a single command
+## 🧰 Installation and execution with a single command
 
 ```bash
 git clone git@github.com:code-chip/vox-backend.git vox-codechip && \
@@ -64,7 +64,7 @@ echo "✅ Backend ready, executing PHP commands..." && \
 bin/dev console -T php sh -c "bin/console doctrine:migrations:migrate && bin/console hautelook:fixtures:load"
 ```
 
-## How to Use
+## 📝 How to Use
 1- Download the shellscript run command `git clone git@github.com:code-chip/vox-backend.git vox-codechip`  
 2- Access the fold with `cd vox-codechip`  
 3- Fill in the values ​​of the environment variables in the .docker/.env file. It is important to fill in the correct values ​​of MY_UID and GID, to confirm your user id in Linux run the id command, the terminal should display something close to this:  
@@ -80,7 +80,7 @@ bin/console doctrine:migrations:migrate
 bin/console hautelook:fixtures:load
 ```
 
-## Available development commands
+## 💻 Available development commands
 * `bin/dev build` will force (re)building the docker-compose stack.
 * `bin/dev rebuild` will update the base docker images, build the docker-compose stack, stop the running containers and restart with the freshly built images.
 * `bin/dev up`/`bin/dev start` or `bin/dev up <service>` will start the docker-compose stack.
@@ -92,7 +92,7 @@ bin/console hautelook:fixtures:load
 * `bin/dev down` or `bin/dev down <service>` will stop and remove all docker-compose stack containers or specify just one.
 * `bin/dev exec --args` will start a bash console inside the `app(laravel), nginx, mysql or composer` container.
 
-## Access broswer
+## 🌐 Access broswer
 Symfony application [http:localhost:8000](http:localhost:8000)  
 
 ## 📘 API Documentation Project
@@ -101,11 +101,8 @@ Acesse a documentação da API em:
 ReDoc:  
 [http://localhost:8000/api/docs?ui=re_doc](http://localhost:8000/api/docs?ui=re_doc)  
 
-## Docker Information
-| Acess for:                                                  |
-|--------------|----------------------------------------------|
-| bin/dev      | docker-compose -f .docker/docker-compose.yml |
-|--------------|----------------------------------------------|
+## 🐳 Access information for Docker
+
 | Service Name | Container Name                               |
 |--------------|----------------------------------------------|
 | `php`        | vox_backend                                  |
@@ -113,7 +110,7 @@ ReDoc:
 | `postgres`   | vox_database                                 |
 
 
-Sponsor Symfony
+🤝 Sponsor Symfony
 -------
 
 Symfony 7.3 is [backed][27] by
@@ -133,7 +130,7 @@ so you can focus on the features.
 
 Help Symfony by [sponsoring][28] its development!
 
-Documentation Symfony
+📖 Documentation Symfony
 -------------
 
 * Read the [Getting Started guide][7] if you are new to Symfony.
@@ -142,7 +139,7 @@ Documentation Symfony
 * Master Symfony with the [Guides and Tutorials][8], the [Components docs][9]
   and the [Best Practices][10] reference.
 
-Community Symfony
+🌍 Community Symfony
 ---------
 
 * [Join the Symfony Community][11] and meet other members at the [Symfony events][12].
@@ -150,19 +147,19 @@ Community Symfony
 * Follow us on [GitHub][14], [Twitter][15] and [Facebook][16].
 * Read our [Code of Conduct][24] and meet the [CARE Team][25].
 
-Contributing Symfony
+🧑‍💻 Contributing Symfony
 ------------
 
 Symfony is an Open Source, community-driven project with thousands of
 [contributors][19]. Join them [contributing code][17] or [contributing documentation][18].
 
-Security Issues Symfony
+🔐 Security Issues Symfony
 ---------------
 
 If you discover a security vulnerability within Symfony, please follow our
 [disclosure procedure][20].
 
-About Us Symfony
+👥 About Us Symfony
 --------
 
 Symfony development is led by the [Symfony Core Team][22]
@@ -198,6 +195,7 @@ and supported by [Symfony contributors][19].
 [29]: https://sulu.io
 [30]: https://getrector.com
 
+## 🚀 API Platform
 
 <p align="center"><img src="https://camo.githubusercontent.com/1dda7b42ea0e6ac854a4879763d1cd36c10d37168abbf268b2425b67f68c4520/68747470733a2f2f6170692d706c6174666f726d2e636f6d2f696d616765732f6c6f676f732f4c6f676f5f436972636c65253230776562627925323074657874253230626c75652e706e67" width="250" height="250" alt="API Platform"></p>
 
@@ -242,12 +240,12 @@ It means than you can:
 * enjoy the popular [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html) (used by default, but fully optional: you can
   use the data provider you want, including but not limited to MongoDB ODM and ElasticSearch)
 
-Getting Started API Platform
+🛠️ Getting Started API Platform
 -------
 
 [Read the official "Getting Started" guide](https://api-platform.com/docs/core/getting-started).
 
-Credits API Platform
+🏅 Credits API Platform
 -------
 
 Created by [Kévin Dunglas](https://dunglas.fr). Commercial support available at [Les-Tilleuls.coop](https://les-tilleuls.coop).
