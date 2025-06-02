@@ -1,3 +1,155 @@
+<p align="center"><a href="https://symfony.com" target="_blank">
+    <img src="https://symfony.com/logos/symfony_dynamic_01.svg" alt="Symfony Logo">
+</a></p>
+
+[Symfony][1] is a **PHP framework** for web and console applications and a set
+of reusable **PHP components**. Symfony is used by thousands of web
+applications and most of the [popular PHP projects][2].
+
+## Services
+PHP 8.3  
+PostgreSQL 15  
+NGINX    
+
+## Requirements
+
+- **Docker** 20.10.12+
+- **Docker Compose** 1.25+
+- **GIT** 2.25.1+
+
+## Installation and execution with a single command
+
+```bash
+git clone git@github.com:code-chip/vox-backend.git vox-codechip && \
+cd vox-codechip && \
+bin/dev build && \
+bin/dev up -d && \
+echo "⏳ Waiting for the backend to start..." && \
+until [ -f vendor/autoload.php ]; do
+  echo "⏳ Waiting for autoload to be generated..."
+  sleep 2
+done && \
+echo "✅ Backend ready, executing PHP commands..." && \
+bin/dev console -T php sh -c "bin/console doctrine:migrations:migrate && bin/console hautelook:fixtures:load"
+```
+
+## How to Use
+1- Download the shellscript run command `git clone git@github.com:code-chip/vox-backend.git vox-codechip`  
+2- Access the fold with `cd vox-codechip`  
+3- Fill in the values ​​of the environment variables in the .docker/.env file. It is important to fill in the correct values ​​of MY_UID and GID, to confirm your user id in Linux run the id command, the terminal should display something close to this:  
+```bash
+uid=1000(will) gid=1000(will) grupos=1000(will),4(adm),24(cdrom),27(sudo),30(dip),33(www-data),46(plugdev),100(users),105(lpadmin),125(sambashare),127(docker)
+```
+4- Run the command `bin/dev build` or `docker-compose build`.  
+5- Start services `bin/dev up` or `docker-compose up -d`.
+6- Run database migrations and fixtures, Access the php container bash:
+```bash
+bin/dev console php
+bin/console doctrine:migrations:migrate
+bin/console hautelook:fixtures:load
+```
+
+## Available development commands
+* `bin/dev build` will force (re)building the docker-compose stack.
+* `bin/dev rebuild` will update the base docker images, build the docker-compose stack, stop the running containers and restart with the freshly built images.
+* `bin/dev up`/`bin/dev start` or `bin/dev up <service>` will start the docker-compose stack.
+* `bin/dev status` will print the current status of the docker-compose stack.
+* `bin/dev restart` will restart the docker-compose stack.
+* `bin/dev logs <service>` will print the logs for the given container.
+* `bin/dev console <service>` will start a bash console inside the `app(laravel), nginx, mysql or composer` container.
+* `bin/dev stop` or `bin/dev stop <service>` will stop all running docker-compose stack containers or specify just one.
+* `bin/dev down` or `bin/dev down <service>` will stop and remove all docker-compose stack containers or specify just one.
+* `bin/dev exec --args` will start a bash console inside the `app(laravel), nginx, mysql or composer` container.
+
+## Access broswer
+Symfony application [http:localhost:8000](http:localhost:8000)  
+
+Sponsor
+-------
+
+Symfony 7.3 is [backed][27] by
+- [Sulu][29]
+- [Rector][30]
+
+**Sulu** is the CMS for Symfony developers. It provides pre-built content-management
+features while giving developers the freedom to build, deploy, and maintain custom
+solutions using full-stack Symfony. Sulu is ideal for creating complex websites,
+integrating external tools, and building custom-built solutions.
+
+**Rector** helps successful and growing companies to get the most of the code
+they already have. Including upgrading to the latest Symfony LTS. They deliver
+automated refactoring, reduce maintenance costs, speed up feature delivery, and
+transform legacy code into a strategic asset. They can handle the dirty work,
+so you can focus on the features.
+
+Help Symfony by [sponsoring][28] its development!
+
+Documentation
+-------------
+
+* Read the [Getting Started guide][7] if you are new to Symfony.
+* Try the [Symfony Demo application][23] to learn Symfony in practice.
+* Discover Symfony ecosystem in detail with [Symfony The Fast Track][26].
+* Master Symfony with the [Guides and Tutorials][8], the [Components docs][9]
+  and the [Best Practices][10] reference.
+
+Community
+---------
+
+* [Join the Symfony Community][11] and meet other members at the [Symfony events][12].
+* [Get Symfony support][13] on GitHub Discussions, Slack, etc.
+* Follow us on [GitHub][14], [Twitter][15] and [Facebook][16].
+* Read our [Code of Conduct][24] and meet the [CARE Team][25].
+
+Contributing
+------------
+
+Symfony is an Open Source, community-driven project with thousands of
+[contributors][19]. Join them [contributing code][17] or [contributing documentation][18].
+
+Security Issues
+---------------
+
+If you discover a security vulnerability within Symfony, please follow our
+[disclosure procedure][20].
+
+About Us
+--------
+
+Symfony development is led by the [Symfony Core Team][22]
+and supported by [Symfony contributors][19].
+
+[1]: https://symfony.com
+[2]: https://symfony.com/projects
+[3]: https://symfony.com/doc/current/reference/requirements.html
+[4]: https://symfony.com/doc/current/setup.html
+[5]: https://semver.org
+[6]: https://symfony.com/doc/current/contributing/community/releases.html
+[7]: https://symfony.com/doc/current/page_creation.html
+[8]: https://symfony.com/doc/current/index.html
+[9]: https://symfony.com/doc/current/components/index.html
+[10]: https://symfony.com/doc/current/best_practices/index.html
+[11]: https://symfony.com/community
+[12]: https://symfony.com/events/
+[13]: https://symfony.com/support
+[14]: https://github.com/symfony
+[15]: https://twitter.com/symfony
+[16]: https://www.facebook.com/SymfonyFramework/
+[17]: https://symfony.com/doc/current/contributing/code/index.html
+[18]: https://symfony.com/doc/current/contributing/documentation/index.html
+[19]: https://symfony.com/contributors
+[20]: https://symfony.com/security
+[22]: https://symfony.com/doc/current/contributing/code/core_team.html
+[23]: https://github.com/symfony/symfony-demo
+[24]: https://symfony.com/coc
+[25]: https://symfony.com/doc/current/contributing/code_of_conduct/care_team.html
+[26]: https://symfony.com/book
+[27]: https://symfony.com/backers
+[28]: https://symfony.com/sponsor
+[29]: https://sulu.io
+[30]: https://getrector.com
+
+
 <p align="center"><img src="https://api-platform.com/logo-250x250.png" alt="API Platform"></p>
 
 API Platform is a next-generation web framework designed to easily create API-first projects without
