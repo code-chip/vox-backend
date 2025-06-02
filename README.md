@@ -1,3 +1,36 @@
+# Vox Backend
+
+## Overview
+
+This project was developed and tested only in the Linux environment.   
+The project is a Backend application with:
+
+- Backend: Symfony 7.3 with PHP 8.3.
+- Database: PostreSQL 15 with tables for company, partner and user.
+- Docker: Containers for Symfony, NGINX and database with networking for inter-container communication.
+
+## 📚 Table of Contents
+
+- [Vox Backend](#vox-backend)
+- [Overview](#overview)
+- [Services](#services)
+- [Requirements](#requirements)
+- [Installation and execution with a single command](#installation-and-execution-with-a-single-command)
+- [How to Use](#how-to-use)
+- [Available development commands](#available-development-commands)
+- [Access broswer](#access-broswer)
+- [📘 API Documentation](#-api-documentation)
+- [Docker Information](#docker-information)
+- [Sponsor](#sponsor)
+- [Documentation](#documentation)
+- [Community](#community)
+- [Contributing](#contributing)
+- [Security Issues](#security-issues)
+- [About Us](#about-us)
+- [API Platform](#api-platform)
+- [Getting Started API Platform](#getting-started-api-platform)
+- [Credits](#credits)
+
 <p align="center"><a href="https://symfony.com" target="_blank">
     <img src="https://symfony.com/logos/symfony_dynamic_01.svg" alt="Symfony Logo">
 </a></p>
@@ -63,6 +96,22 @@ bin/console hautelook:fixtures:load
 
 ## Access broswer
 Symfony application [http:localhost:8000](http:localhost:8000)  
+
+## 📘 API Documentation
+Acesse a documentação da API em:  
+[http://localhost:8000/api/docs](http://localhost:8000/api/docs)
+ReDoc:
+[http://localhost:8000/api/docs?ui=re_doc](http://localhost:8000/api/docs?ui=re_doc)  
+
+## Docker Information
+| Acess for:                                                  |
+| bin/dev      | docker-compose -f .docker/docker-compose.yml |
+| Service Name | Container Name                               |
+|--------------|----------------------------------------------|
+| `php`        | vox_backend                                  |
+| `nginx`      | vox_nginx                                    |
+| `postgres`   | vox_database                                 |
+
 
 Sponsor
 -------
@@ -150,7 +199,7 @@ and supported by [Symfony contributors][19].
 [30]: https://getrector.com
 
 
-<p align="center"><img src="https://api-platform.com/logo-250x250.png" alt="API Platform"></p>
+<p align="center"><img src="https://camo.githubusercontent.com/1dda7b42ea0e6ac854a4879763d1cd36c10d37168abbf268b2425b67f68c4520/68747470733a2f2f6170692d706c6174666f726d2e636f6d2f696d616765732f6c6f676f732f4c6f676f5f436972636c65253230776562627925323074657874253230626c75652e706e67" alt="API Platform"></p>
 
 API Platform is a next-generation web framework designed to easily create API-first projects without
 compromising extensibility and flexibility:
@@ -193,7 +242,7 @@ It means than you can:
 * enjoy the popular [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html) (used by default, but fully optional: you can
   use the data provider you want, including but not limited to MongoDB ODM and ElasticSearch)
 
-Install
+Getting Started API Platform
 -------
 
 [Read the official "Getting Started" guide](https://api-platform.com/docs/core/getting-started).
