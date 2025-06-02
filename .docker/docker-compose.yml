@@ -22,16 +22,21 @@ services:
     command:
       - -c
       - |
-        if [ ! -f bin/console ]; then
-          composer create-project symfony/skeleton symfony-temp
-          cp -r symfony-temp/* ./ && \
-          cp -r symfony-temp/.* ./ 2>/dev/null || true && \
-          composer config name ${COMPOSER_PROJECT_NAME} && \
-          composer config type ${COMPOSER_TYPE} && \
-          composer require api symfony/orm-pack symfony/maker-bundle && \
-          rm -rf symfony-temp
-        fi
-        php-fpm      
+        composer install
+        php-fpm
+    # command:
+    #   - -c
+    #   - |
+    #     if [ ! -f bin/console ]; then
+    #       composer create-project symfony/skeleton symfony-temp
+    #       cp -r symfony-temp/* ./ && \
+    #       cp -r symfony-temp/.* ./ 2>/dev/null || true && \
+    #       composer config name ${COMPOSER_PROJECT_NAME} && \
+    #       composer config type ${COMPOSER_TYPE} && \
+    #       composer require api symfony/orm-pack symfony/maker-bundle && \
+    #       rm -rf symfony-temp
+    #     fi
+    #     php-fpm      
   nginx:
     image: nginx:latest
     container_name: ${PROJECT_NAME}_nginx
